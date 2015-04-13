@@ -1,0 +1,38 @@
+body {
+    background-color: #FFFFCC;
+    font-family: Arial;
+}
+
+
+#iframe1 {
+	/*hacky*/
+	height: 600px;
+	position:relative;
+	overflow: hidden;
+	z-index:-9999;
+}
+
+nav {
+	font-size: 90%;
+}
+
+nav ul {
+	list-style: none;
+	display: inline;
+}
+
+nav li {
+	float: left;
+	text-align: center;
+	background-color: #FFFF6E;
+	width: 140px;
+	height: 25px;
+}
+
+nav li .sub {
+	visibility:hidden;
+}
+
+nav li:hover .sub{
+	visibility: visible;
+}
