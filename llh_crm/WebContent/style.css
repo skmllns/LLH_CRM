@@ -3,13 +3,23 @@ body {
     font-family: Arial;
 }
 
-
-#iframe1 {
+/* need to fix this so that menu is over the frame, but doesn't cover it completely */
+/* negative z-index: menu overlaps frame, BUT covers text fields
+/* positive/blank z-index: text fields are writable, but the menu bar is way too big */
+#menu_bar {
 	/*hacky*/
-	height: 600px;
-	position:relative;
+	position: relative;
 	overflow: hidden;
-	z-index:-9999;
+	
+	/* z-index:-9999; */
+}
+
+#button_link{
+	
+	 background:none;
+     border:none; 
+     padding:0;
+     color: red;
 }
 
 nav {
@@ -21,18 +31,21 @@ nav ul {
 	display: inline;
 }
 
+/* need to fix this so that menu is over the frame, but doesn't cover it completely */
+/* maybe just adjust the height? so you don't have to worry about overlapping? */
+/* how big is the top frame, anyway? how to adjust where iframe is in the middle of the page? */
 nav li {
 	float: left;
 	text-align: center;
 	background-color: #FFFF6E;
 	width: 140px;
-	height: 25px;
+	/*height: 100px;*/
 }
 
 nav li .sub {
 	visibility:hidden;
 }
 
-nav li:hover .sub{
+nav li:hover .sub {
 	visibility: visible;
 }

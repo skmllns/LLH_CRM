@@ -103,16 +103,6 @@ public class AddConstituent extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{
-		
-				
-		
-	}
 
 	private void addConst(Connection connection, String first_name, String last_name, String const_type,
 						  String address, String city, String state, String zip_code, String country,
@@ -125,11 +115,12 @@ public class AddConstituent extends HttpServlet {
 		statement = connection.createStatement();
 		int i = -1;
 		
-		String update = "INSERT INTO Constituent (first_name, last_name, con_type, address, city, state, zip_code, country,"
+		String update = "INSERT INTO "
+				+ "Constituent (first_name, last_name, con_type, address, city, state, zip_code, country,"
 				+ "neighborhood, email, phone_num, referral_method, interests, comments) "
-				+ "VALUES('" + first_name + "','" + last_name + "','" + const_type +  "','" 
-				+ address + "', '" + city + "', '" + state + "','" + zip_code + "','" + country + "', '" + neighborhood + "', '" 
-				+ email + "', '" + phone_num + "', '" + refer_method + "', " + interest + ", '" + comments + "')";
+				+ "VALUES('" + first_name + "', '" + last_name + "', '" + const_type +  "', '" 
+				+ address + "', '" + city + "', '" + state + "', '" + zip_code + "', '" + country + "', '" + neighborhood + "', '" 
+				+ email + "', '" + phone_num + "', '" + refer_method + "', '" + interest + "', '" + comments + "')";
 				
 		System.out.println(update);
 		i = statement.executeUpdate(update);

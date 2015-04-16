@@ -22,7 +22,7 @@ public class SearchConstituent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	public ResultSet	results 				= null;
-	public String		query_results			= "";
+	public String		sqlResult				= "";
 	Connection			connection				= null;
 	public Statement	statement				= null;
 	 
@@ -48,9 +48,9 @@ public class SearchConstituent extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		//set session attributes
-		session.setAttribute("query_results", query_results);
+		session.setAttribute("sqlResult", sqlResult);
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/query_results.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/welcome.jsp");
 		dispatcher.forward(request,response);
 
 	}
@@ -64,7 +64,7 @@ public class SearchConstituent extends HttpServlet {
 		results = statement.executeQuery(search_query);
 		if(results != null)
 		{
-			query_results = SQLUtil.getHtmlTable(results);
+			sqlResult = SQLUtil.getHtmlTable(results);
 			
 			results.close();
 		}

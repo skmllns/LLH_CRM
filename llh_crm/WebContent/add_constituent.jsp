@@ -8,8 +8,6 @@
 <title>Add Constituent</title>
 </head>
 <body>
-<br>
-<br>
 <h2> Add constituent </h2>
 	<form action = "AddConstituent" id="add_const">
 		<input name = "first_name" type = "text" placeholder = "First Name">
