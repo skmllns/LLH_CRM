@@ -50,7 +50,7 @@ public class SearchConstituent extends HttpServlet {
 		//set session attributes
 		session.setAttribute("sqlResult", sqlResult);
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/welcome.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/main_page.jsp");
 		dispatcher.forward(request,response);
 
 	}

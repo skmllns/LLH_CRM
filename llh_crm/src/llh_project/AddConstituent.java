@@ -91,14 +91,10 @@ public class AddConstituent extends HttpServlet {
 				
 					
 				pool.freeConnection(connection);
-				
-				PrintWriter out = response.getWriter();
-				out.println("Successfully added constituent!");
-
-				
-				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/main_page.jsp");
-				dispatcher.forward(request,response);
+				response.sendRedirect("welcome.jsp");
+//				
+//				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/main_page.jsp");
+//				dispatcher.forward(request,response);
 		
 	}
 

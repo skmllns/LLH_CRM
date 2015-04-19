@@ -9,7 +9,7 @@
 </head>
 <body>
 <h2> Add constituent </h2>
-	<form action = "AddConstituent" target="main_page" id="add_const">
+	<form action = "AddConstituent" target="welcome" id="add_const">
 		<input name = "first_name" type = "text" placeholder = "First Name">
 		<input name = "last_name" type = "text" placeholder = "Last Name">
 		<input name = "const_type" type = "text" placeholder = "Constituent Type"> <!--  change to drop down -->

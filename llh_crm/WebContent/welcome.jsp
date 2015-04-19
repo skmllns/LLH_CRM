@@ -18,6 +18,6 @@
 
 %>
 <font color= "blue"><%=message %></font>
-Poop
+Header for Welcome Page
 </body>
 </html>

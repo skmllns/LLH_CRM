@@ -4,15 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="style.css">
-<title>Search for Constituent</title>
+<title>Insert title here</title>
 </head>
 <body>
-<h2>Search for Constituent</h2>
-<form action="SearchConstituent">
-	<input name="last_name" type="text" placeholder="Last Name">
-	<input type="submit" value="Submit">
-</form>
-
+<jsp:include page="/SearchConstituent" />
 </body>
 </html>
