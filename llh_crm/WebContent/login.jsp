@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="crm_style.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 <title>Login Page</title>
 </head>
 <body>

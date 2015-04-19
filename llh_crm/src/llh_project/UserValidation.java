@@ -133,7 +133,7 @@ public class UserValidation extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
-		String success_url = "/welcome.jsp";
+		String success_url = "/main_page.jsp";
 		String failure_url = "/login.jsp";
 		int login_info_found = 0;
 		

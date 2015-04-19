@@ -9,7 +9,7 @@
 </head>
 <body>
 <h2>Search for Constituent</h2>
-<form action="SearchConstituent">
+<form action="SearchConstituent" target="welcome">
 	<input name="last_name" type="text" placeholder="Last Name">
 	<input type="submit" value="Submit">
 </form>

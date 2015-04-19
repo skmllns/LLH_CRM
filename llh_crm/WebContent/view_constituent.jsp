@@ -3,10 +3,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link rel='stylesheet' type='text/css' href='style.css'>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Query Result</title>
+<title>Insert title here</title>
 </head>
 <body>
-${query_result}
+<%
+String which_table = request.getParameter("view");
+String jsp_include = "/ViewConstituent?" + which_table;
+System.out.println(jsp_include);
+%>
+<jsp:include page="<%=jsp_include %>"/>
+
 </body>
 </html>

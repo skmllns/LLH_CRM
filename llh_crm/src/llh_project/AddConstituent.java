@@ -1,6 +1,7 @@
 package llh_project;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -79,7 +80,7 @@ public class AddConstituent extends HttpServlet {
 				try 
 				{
 					addConst(connection, first_name, last_name, const_type, address, city, state, zip_code, country, neighborhood, email,
-							phone_num, refer_method, interest, comments);
+							phone_num, refer_method, comments);
 					
 				}
 				catch (SQLException e) 
@@ -91,14 +92,12 @@ public class AddConstituent extends HttpServlet {
 					
 				pool.freeConnection(connection);
 				
-				//create a session
-				HttpSession session = request.getSession();
-				
-				//set session attributes
-				session.setAttribute("result", "Successfully added constituent.");
+				PrintWriter out = response.getWriter();
+				out.println("Successfully added constituent!");
+
 				
 				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/welcome.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/main_page.jsp");
 				dispatcher.forward(request,response);
 		
 	}
@@ -106,7 +105,7 @@ public class AddConstituent extends HttpServlet {
 
 	private void addConst(Connection connection, String first_name, String last_name, String const_type,
 						  String address, String city, String state, String zip_code, String country,
-						  String neighborhood, String email, String phone_num, String refer_method, String interest, String comments) 
+						  String neighborhood, String email, String phone_num, String refer_method, String comments) 
 								  throws SQLException 
 	{
 		System.out.println("entered add constituent function");
@@ -117,10 +116,10 @@ public class AddConstituent extends HttpServlet {
 		
 		String update = "INSERT INTO "
 				+ "Constituent (first_name, last_name, con_type, address, city, state, zip_code, country,"
-				+ "neighborhood, email, phone_num, referral_method, interests, comments) "
+				+ "neighborhood, email, phone_num, referral_method, comments) "
 				+ "VALUES('" + first_name + "', '" + last_name + "', '" + const_type +  "', '" 
 				+ address + "', '" + city + "', '" + state + "', '" + zip_code + "', '" + country + "', '" + neighborhood + "', '" 
-				+ email + "', '" + phone_num + "', '" + refer_method + "', '" + interest + "', '" + comments + "')";
+				+ email + "', '" + phone_num + "', '" + refer_method + "', '"  + comments + "')";
 				
 		System.out.println(update);
 		i = statement.executeUpdate(update);

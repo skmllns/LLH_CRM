@@ -9,7 +9,7 @@
 </head>
 <body>
 <h2> Add constituent </h2>
-	<form action = "AddConstituent" id="add_const">
+	<form action = "AddConstituent" target="main_page" id="add_const">
 		<input name = "first_name" type = "text" placeholder = "First Name">
 		<input name = "last_name" type = "text" placeholder = "Last Name">
 		<input name = "const_type" type = "text" placeholder = "Constituent Type"> <!--  change to drop down -->
@@ -22,7 +22,6 @@
 		<input name = "email" type="text" placeholder="Email address">
 		<input name = "phone_num" type = "text" placeholder = "Phone Number"> <!--  standardize this-->
 		<input name = "refer_method" type = "text" placeholder = "Referral Method"> <!--  change to drop down -->
-		<input name = "interest" type = "text" placeholder = "Interest"> <!--  how to have multiple? -->
 		<br>
 		<textarea rows="4" cols="50" name="comments" form="add_const" placeholder = "Comments"></textarea>
 		<br>
