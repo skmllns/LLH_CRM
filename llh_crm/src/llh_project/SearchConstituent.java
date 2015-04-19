@@ -1,8 +1,10 @@
 package llh_project;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import llh_project.ConnectionPool;
 /**
  * Servlet implementation class SearchConstituent
  */
@@ -32,42 +35,60 @@ public class SearchConstituent extends HttpServlet {
 		ConnectionPool pool = ConnectionPool.getInstance("jdbc/skmull02");		
 		connection = pool.getConnection();
 				
-		try 
-		{
-			searchConst(connection, last_name);
-			
-		}
-		catch (SQLException e) 
-		{
-			e.printStackTrace();
-		}
-		
-		pool.freeConnection(connection);
-		
-		//create a session
-		HttpSession session = request.getSession();
-		
-		//set session attributes
-		session.setAttribute("sqlResult", sqlResult);
-		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/main_page.jsp");
-		dispatcher.forward(request,response);
+	
+        
+        int column_count = 0;
+        ResultSetMetaData metaData;
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("<head>");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<body>");
+        out.println("<table>");
+        out.println("<tr style=\"font-size=80%\">");
+       //        
+        try
+        {
+            results = parseAndExecuteView(last_name, connection);
+            metaData = results.getMetaData();
+            column_count = metaData.getColumnCount();
+            for(int i = 1; i <= column_count; i++)
+            {
+            	out.println("<td ><b>" + metaData.getColumnName(i) + "</td>");
+            }
+            
+            out.println("</tr>");
+            while(results.next())
+            {
+            	out.println("<tr>");
+            	for(int i = 1; i <= column_count; i++)
+            	{
+            		out.println("<td>" + results.getString(i) + "</td>");
+            	}
+            }
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+//        
+        out.println("</tr>");
+        out.println("</table>");
+//        
+        pool.freeConnection(connection);
 
 	}
 	
-	private void searchConst(Connection connection,  String last_name) throws SQLException 
-	{
-		statement = connection.createStatement();
-		
-		
-		String search_query = "SELECT * FROM Constituent WHERE last_name = '" + last_name + "'";
-		results = statement.executeQuery(search_query);
-		if(results != null)
-		{
-			sqlResult = SQLUtil.getHtmlTable(results);
-			
-			results.close();
-		}
-		
-	}
+	private ResultSet parseAndExecuteView(String last_name, Connection connection) throws SQLException
+    {
+        statement = connection.createStatement();
+        String search_query = "SELECT * FROM Constituent WHERE last_name = '" + last_name + "'";
+        System.out.println(search_query);
+        return statement.executeQuery(search_query);
+        /*sqlResult = SQLUtil.getHtmlTable(results);
+        System.out.println(sqlResult);
+        results.close();*/
+    }
 }
