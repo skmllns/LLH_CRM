@@ -18,6 +18,37 @@
 
 %>
 <font color= "blue"><%=message %></font>
-Header for Welcome Page
+<h2> Instructions </h2>
+
+<ul>
+	<li>Add</li>
+		<ul>
+			<li>Main constituent</li>
+			<ul>
+				<li> Click "Add" option under "Constituent" heading </li>
+				<li> Add information </li>
+			</ul>
+		</ul>
+		<ul>
+			<li> Sub-category (member, staff, etc.)</li>
+			<ul>
+				<li> Click "Add" under appropriate heading </li>
+				<li> Choose relevant constituent </li>
+				<li> Add information </li>
+			</ul>
+		</ul>
+	<li>View</li>
+		<ul>
+			<li> Click "View" under appropriate heading </li>
+		</ul>
+	
+<!-- 	<li>Edit</li>
+		<ul>
+			<li> Click "Edit" under appropriate heading </li>
+			<li> Select relevant constituent </li>
+			<li> Edit and save information </li>
+		</ul> -->
+</ul>
+
 </body>
 </html>

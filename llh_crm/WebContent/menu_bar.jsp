@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <head>
 <title>LLH CRM System</title>
+
 <link rel='stylesheet' type='text/css' href='style.css'>
 </head>
 <body>
@@ -24,52 +25,87 @@
 			
 			<li>Member
 				<ul>
-					<li><a href="add_member.jsp" target="iframe1">Add</a></li>
-					<form action="view_constituent.jsp" target="welcome">
-						<input type="hidden" name="view" value="skmull02.member">
-						<input type=submit id="button_link" value="View">
-					</form>
+					<li>
+						<form action="list_constituent.jsp" target="welcome">
+							<input type="hidden" name="add_type" value="member">
+							<input type=submit id="button_link" value="Add">
+						</form>
+					</li>
+					<li>
+						<form action="view_constituent.jsp" target="welcome">
+							<input type="hidden" name="view" value="skmull02.member">
+							<input type=submit id="button_link" value="View">
+						</form>
+					</li>
 				</ul>
 			</li>
-			
+			z
 			<li>Staff
 				<ul>
-					<li><a href="add_staff.jsp" target="iframe1">Add</a></li>
+					<li>
+						<form action="list_constituent.jsp" target="welcome">
+							<input type="hidden" name="add_type" value="staff">
+							<input type=submit id="button_link" value="Add">
+						</form>
+					</li>
+					<li>
 					<form action="view_constituent.jsp" target="welcome">
 						<input type="hidden" name="view" value="skmull02.staff">
 						<input type=submit  id="button_link" value="View">
 					</form>
+					</li>
 				</ul>
 			</li>
 			
 			<li>Board Member
 				<ul>
-					<li><a href="add_board.jsp" target="iframe1">Add</a></li>
+					<li>
+						<form action="list_constituent.jsp" target="welcome">
+							<input type="hidden" name="add_type" value="board">
+							<input type=submit id="button_link" value="Add">
+						</form>
+					</li>
+					<li>
 					<form action="view_constituent.jsp" target="welcome">
 						<input type="hidden" name="view" value="skmull02.board">
 						<input type=submit id="button_link"value="View">
 					</form>
+					</li>
 				</ul>
 			</li>
 			
 			<li>Donor
 				<ul>
-					<li><a href="add_donor.jsp" target="iframe1">Add</a></li>
+					<li>
+						<form action="list_constituent.jsp" target="welcome">
+							<input type="hidden" name="add_type" value="donor">
+							<input type=submit id="button_link" value="Add">
+						</form>
+					</li>
+					<li>
 					<form action="view_constituent.jsp" target="welcome">
 						<input type="hidden" name="view" value="skmull02.donor">
 						<input type=submit id="button_link" value="View">
 					</form>
+					</li>
 				</ul>
 			</li>
 			
 			
 			<li>Agency
 				<ul>
-					<li><a href="add_agency.jsp" target="iframe1">Add</a></li>
+					<li>
+						<form action="list_constituent.jsp" target="welcome">
+							<input type="hidden" name="add_type" value="agency">
+							<input type=submit id="button_link" value="Add">
+						</form>
+					</li>
+					<li>
 					<form action="view_constituent.jsp" target="welcome">
 						<input type="hidden" name="view" value="skmull02.partner">
 						<input type=submit id="button_link" value="View" >
 					</form>
+					</li>
 				</ul>
 			</li>
 			

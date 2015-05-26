@@ -11,8 +11,23 @@
 
 <body>
 <h2> Add member </h2>
+<%
+    String message = " ";
+    Object get_message = request.getAttribute("member_id");
+    if (get_message != null)
+    {
+    	System.out.println("message not null!");
+        message = get_message.toString();
+    }
+    else
+    {
+    	System.out.println("message was null");
+    }
 
-<form action = "AddConstituent" id="add_member">
+%>
+
+<form action = "AddMember">
+	<input type = "hidden" name="member_id" value=<%=message %>>
 	<input name="member_type" type="text" placeholder = "Member Type">
 	<input name="member_year" type="text" placeholder = "Member Year">
 	

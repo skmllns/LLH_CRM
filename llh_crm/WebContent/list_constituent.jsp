@@ -7,6 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:include page="/SearchConstituent" />
+<%
+String which_table = request.getParameter("add_type");
+String jsp_include = "/ListConstituent?" + which_table;
+System.out.println(jsp_include);
+%>
+<jsp:include page="<%=jsp_include %>" ></jsp:include>
 </body>
 </html>

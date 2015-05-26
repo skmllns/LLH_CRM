@@ -9,8 +9,23 @@
 </head>
 <body>
 <h2> Add board member </h2>
+<%
+    String message = " ";
+    Object get_message = request.getAttribute("member_id");
+    if (get_message != null)
+    {
+    	System.out.println("message not null!");
+        message = get_message.toString();
+    }
+    else
+    {
+    	System.out.println("message was null");
+    }
 
-<form action = "AddConstituent" id="add_board">
+%>
+
+<form action = "AddBoard" id="add_board">
+	<input type = "hidden" name="member_id" value=<%=message %>>
 	<input name="board_pos" type="text" placeholder="Board position">
 	<input name="pos_start_date" type="text" placeholder="Position start date"> <!-- standardize this -->
 	

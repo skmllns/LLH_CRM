@@ -9,10 +9,27 @@
 </head>
 <body>
 <h2> Add donor </h2>
+<%
+    String message = " ";
+    Object get_message = request.getAttribute("member_id");
+    if (get_message != null)
+    {
+    	System.out.println("message not null!");
+        message = get_message.toString();
+    }
+    else
+    {
+    	System.out.println("message was null");
+    }
 
-<form action = "AddConstituent" id="add_donor">
+%>
+<form action = "AddDonor" id="add_donor">
+	<input type = "hidden" name="member_id" value=<%=message %>>
 	<input name="fund" type="text" placeholder="Fund">
-	<input name="don_type" type="text" placeholder="Donation type"> <!-- drop down -->
+	<select name="don_type">
+			<option value="monetary">Monetary</option>
+			<option value="in-kind">In-kind</option>
+		</select>
 	<input name="don_amt" type="text" placeholder="Donation amount"> <!-- standardize this -->
 	<input name="don_date" type="text" placeholder="Donation date"> <!-- standardize this -->
 

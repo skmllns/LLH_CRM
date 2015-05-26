@@ -45,7 +45,6 @@ public class SearchConstituent extends HttpServlet {
         out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">");
         out.println("</head>");
         out.println("<body>");
-        out.println("<body>");
         out.println("<table>");
         out.println("<tr style=\"font-size=80%\">");
        //        
@@ -73,10 +72,9 @@ public class SearchConstituent extends HttpServlet {
         {
             e.printStackTrace();
         }
-//        
         out.println("</tr>");
         out.println("</table>");
-//        
+        
         pool.freeConnection(connection);
 
 	}
@@ -87,8 +85,5 @@ public class SearchConstituent extends HttpServlet {
         String search_query = "SELECT * FROM Constituent WHERE last_name = '" + last_name + "'";
         System.out.println(search_query);
         return statement.executeQuery(search_query);
-        /*sqlResult = SQLUtil.getHtmlTable(results);
-        System.out.println(sqlResult);
-        results.close();*/
     }
 }

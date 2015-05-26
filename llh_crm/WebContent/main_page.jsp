@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div align="top">
-		<iframe id="menu_bar" name="menu_bar" src="menu_bar.jsp" frameBorder="0" width=100%></iframe>
+		<iframe id="menu_bar" name="menu_bar" src="menu_bar.jsp" frameBorder="0" width=100% height="175px"></iframe>
 	</div>
 	
 	<div>

@@ -89,7 +89,10 @@ public class AddConstituent extends HttpServlet {
 				}
 				
 				
-					
+				PrintWriter out = response.getWriter();
+		        out.println("<body>");
+		        out.println("<\"Successfully added constituent" + last_name + "\">");
+		        
 				pool.freeConnection(connection);
 				response.sendRedirect("welcome.jsp");
 //				

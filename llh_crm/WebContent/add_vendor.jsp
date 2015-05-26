@@ -9,8 +9,23 @@
 </head>
 <body>
 <h2> Add vendor </h2>
+<%
+    String message = " ";
+    Object get_message = request.getAttribute("member_id");
+    if (get_message != null)
+    {
+    	System.out.println("message not null!");
+        message = get_message.toString();
+    }
+    else
+    {
+    	System.out.println("message was null");
+    }
 
-<form action = "AddConstituent" id="add_vendor">
+%>
+
+<form action = "AddVendor" id="add_vendor">
+	<input type = "hidden" name="member_id" value=<%=message %>>
 	<input name="vendor_type" type="text" placeholder="Vendor type"> <!-- drop down -->
 	<input name="vendor_product" type="text" placeholder="Vendor product">
 

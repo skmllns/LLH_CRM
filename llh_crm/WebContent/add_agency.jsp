@@ -10,8 +10,23 @@
 <body>
 
 <h2> Add gov't or granting agency </h2>
+<%
+    String message = " ";
+    Object get_message = request.getAttribute("member_id");
+    if (get_message != null)
+    {
+    	System.out.println("message not null!");
+        message = get_message.toString();
+    }
+    else
+    {
+    	System.out.println("message was null");
+    }
 
-<form action = "AddConstituent" id="add_agency">
+%>
+
+<form action = "AddAgency" id="add_agency">
+	<input type = "hidden" name="member_id" value=<%=message %>>
 	<input name="agency_area" type="text" placeholder="Area"> <!-- drop down, different wording -->
 
 	<input type=submit value="Submit">

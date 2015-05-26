@@ -9,13 +9,27 @@
 </head>
 <body>
 <h2> Add staff </h2>
+<%
+    String message = " ";
+    Object get_message = request.getAttribute("member_id");
+    if (get_message != null)
+    {
+    	System.out.println("message not null!");
+        message = get_message.toString();
+    }
+    else
+    {
+    	System.out.println("message was null");
+    }
 
-<form action = "AddConstituent" id="add_staff">
-	<!-- how to do staff code? -->
+%>
+<form action = "AddStaff" id="add_staff">
+	<input type = "hidden" name="member_id" value=<%=message %>>
 	<input name="ao_interest" type="text" placeholder="Area of interest">
 	<input name="skill" type="text" placeholder="Skill"> <!-- how to do multiple skills? -->		
+	<input name ="title" type="text" placeholder="Title">
 	<input name="date_active" type="text" placeholder="Date active">
-	<!-- staff code & title -->
+	<input name="staff_code" type="text" placeholder="Staff Code">
 	
 	<input type=submit value="Submit">
 </form>
